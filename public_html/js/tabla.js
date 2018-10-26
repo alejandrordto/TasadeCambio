@@ -26,11 +26,12 @@ function genera_tabla() {
     tabla.setAttribute("border", "2");
 }
 function read(moneda1, moneda2) {
-    url = "https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=" + moneda1 + "&to_symbol=" + moneda2+"&interval=5min&apikey=Y47LUWHBZVHYZWEG";
+    var url = "https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=" + moneda1 + "&to_symbol=" + moneda2+"&interval=5min&apikey=Y47LUWHBZVHYZWEG";
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url, false); // false for synchronous request
     xmlHttp.send(null);
     var lista = xmlHttp.responseText;
+    alert (lista);
     lista = lista.split("\n");
     var value = lista[15];
     value = value.split(":");
