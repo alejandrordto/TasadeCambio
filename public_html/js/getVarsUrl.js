@@ -10,28 +10,19 @@ function getVarsUrl()
     if (moneda1.value === '"USD"') {
         flag = true;
     }
-    for (var i = 0; i < lista.length - 1; i++) {
-        var x = lista[i][0].toString();
-        x = x.substring(4, x.length);
+    for (var x in lista) {
         if (x === moneda1.value) {
-
-            var temp = lista[i][1];
-            temp = temp.toString().substring(0, temp.length - 2);
-            tasa1 = parseFloat(lista[i][1]);
+            tasa1 = parseFloat(lista[x]);
         }
         if (x === moneda2.value) {
-
-            var temp = lista[i][1];
-            temp = temp.toString().substring(0, temp.length - 2);
-
-            tasa2 = parseFloat(lista[i][1]);
+            tasa2 = parseFloat(lista[x]);
         }
     }
     var bal;
     if (flag) {
         bal = tasa2 * numero.value;
     } else {
-        temp=(1/tasa1)*tasa2;
+        var temp=(1/tasa1)*tasa2;
         bal = temp*numero.value;
     }
     document.getElementById("result").value = bal;
