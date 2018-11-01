@@ -50,11 +50,11 @@
                 <p>Seleccione las monedas que desea usar, primero la que quiere cambiar y luego a la que quiere cambiar 
                     ,finalmente ingrese el valor que desea averiguar</p>
                 Cambio de
-                <select class="custom-select mr-sm-2" id="moneda1">
+                <select class="custom-select mr-sm-2" id="moneda1" onchange="getVarsUrl()">
                     <option></option>
                 </select>
                 en
-                <select class="custom-select mr-sm-2" id="moneda2">
+                <select class="custom-select mr-sm-2" id="moneda2" onchange="getVarsUrl()">
                     <option></option>
                 </select>
                 <p>Ingrese el valor deseado</p>
@@ -69,6 +69,14 @@
                     <option ></option>
                 </select>
                 <button type="submit" class="btn btn-success" onclick=" genera_tabla()">buscar</button>
+                <table class="table table-dark" id="tabla" >
+                    <thead>
+                        <tr>
+                            <th scope="col">Moneda</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
 

@@ -27,4 +27,12 @@ function getVarsUrl()
     }
     document.getElementById("result").value = bal;
 }
-
+function read(moneda1,moneda2,lista){
+    var val;
+    if (moneda1.value === '"USD"') {
+        val=parseFloat(lista[moneda2]);
+    } else{
+        val=(1/parseFloat(lista[moneda1])*parseFloat(lista[moneda2]));
+    }
+    return val;
+}
